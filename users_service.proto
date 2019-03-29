@@ -4,14 +4,22 @@ package demo;
 
 service Users {
   rpc Find (FindUserRequest) returns (User) {}
+  rpc All (AllUserRequest) returns (AllUserReply) {}
 }
 
 message FindUserRequest {
   int32 id = 1;
 }
 
+message AllUserRequest {
+}
+
 message User {
   int32 id = 1;
   string email = 2;
   string name = 3;
+}
+
+message AllUserReply {
+  repeated User users = 1;
 }
